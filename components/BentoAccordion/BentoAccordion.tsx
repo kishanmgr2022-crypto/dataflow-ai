@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback, type ReactNode } from 'react';
-import { FEATURES, type Feature } from '@/lib/features-data';
+import { FEATURES, type Feature, basePath } from '@/lib/features-data';
 import './bento-accordion.css';
 
 /* ── Inline SVG Icons ── */
@@ -196,7 +196,7 @@ export default function BentoAccordion() {
                 {/* Feature illustration */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <img
-                    src={feature.image}
+                    src={`${basePath}${feature.image}`}
                     alt={`${feature.title} illustration`}
                     width={400}
                     height={300}
@@ -260,7 +260,7 @@ export default function BentoAccordion() {
                   >
                     <div className="accordion-body">
                       <img
-                        src={feature.image}
+                        src={`${basePath}${feature.image}`}
                         alt={`${feature.title} illustration`}
                         width={400}
                         height={200}

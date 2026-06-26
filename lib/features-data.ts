@@ -1,3 +1,6 @@
+const isProd = process.env.NODE_ENV === 'production';
+export const basePath = isProd ? '/dataflow-ai' : '';
+
 export interface Feature {
   id: string;
   title: string;
